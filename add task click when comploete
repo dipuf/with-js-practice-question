@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="container">
+      <div class="text">
+        
+          <div class="first hid1">
+            <input type = "text" id = "task1" name = "task1">
+          <input type = "checkbox" id = "taskof1" name = "task1">
+          </div>
+          
+          <div class="second hid2">
+            <input type = "text" id  = "task2" name = "task2">
+          <input type = "checkbox" id = "taskof2" name = "task2">
+          </div>
+          <div class="third hid3">
+            <input type="text" id = "task3" name = "task3">
+          <input type = "checkbox" id = "taskof3" name = "task3">
+          </div>
+        
+        <div class="btn">
+          <button>
+          Add task
+        </button>
+
+        </div>
+        
+      </div>
+    </div>
+  <script src="inde.js"></script>
+</body>
+</html>
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+
+.container{
+    height: 50vh;
+    width: 50vw;
+    background-color: skyblue;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.hid1{
+    visibility: hidden;
+}
+.hid2{
+    visibility: hidden;
+}
+.hid3{
+    visibility: hidden;
+}
+
+let f = document.querySelector(".first");
+let s = document.querySelector(".second");
+let t = document.querySelector(".third");
+
+let task1 = document.querySelector("#taskof1");
+let task2 = document.querySelector("#taskof2");
+let btn = document.querySelector(".btn button");
+
+let count = 0;
+
+btn.addEventListener("click", function () {
+
+    count++;
+
+    if (count === 1) {
+        f.classList.remove("hid1");
+    }
+
+    else if (count === 2) {
+        if (task1.checked) {
+            s.classList.remove("hid2");
+        } 
+        else {
+            alert("Please check Task 1 checkbox first");
+            count-=1;
+        }
+        
+    }
+
+
+    else if (count === 3) {
+        if(task2.checked){
+            t.classList.remove("hid3");
+            
+        }
+        else{
+            alert("Please check Task 2 checkbox second");
+            count-=1;
+        }
+    }
+});
