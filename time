@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <script src="inde.js"></script>
+</body>
+</html>
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background-color: black;
+    color: skyblue;
+    font-size: 100px;
+}
+
+let a = document.body;
+function show(){
+  let now = new Date();
+
+  let h = now.getHours();
+  let m = now.getMinutes();
+  let s = now.getSeconds();
+  let day = now.getDay();
+  let output;
+  if(day == 1){
+    output = "Monday";
+  }
+  else if(day == 2){
+    output = "Tuesday";
+  }
+  else if(day = 3){
+    output = "Wednesday";
+  }
+  else if(day = 4){
+    output = "Thursday";
+  }
+  else if(day = 5){
+    output = "Friday";
+  }
+  else if(day = 6){
+    output = "Saturday";
+  }
+  else if(day = 7){
+    output = "Sunday";
+  }
+  else{
+    "no day defined";
+  }
+  
+  h = h < 10 ? "0" + h : h;
+  m = m < 10 ? "0" + m : m;
+  s = s < 10 ? "0" + s : s;
+  if(h<=12 && m<=0){
+    a.innerText = "Time : "+h+":"+m+":"+s+" AM"+'\n'+"Day : "+output;
+  }
+  else{
+        a.innerText = "Time : "+h+":"+m+":"+s+" PM"+'\n'+"Day : "+output;
+  }
+
+  }
+
+setInterval(() => {
+  show();
+},1000);
+show();
