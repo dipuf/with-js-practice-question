@@ -1,0 +1,25 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: aqua;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+.container{
+  width: 57vw;
+  overflow: hidden;
+
+}
+.rapper{
+  width: 100%;
+  display: flex;
+}
+.rapper img{
+  flex-shrink: 0;
+}
+
