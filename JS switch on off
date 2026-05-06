@@ -1,0 +1,17 @@
+let isOpen = false
+let btn = document.querySelector(".switch")
+let bulbtop = document.querySelector(".bulb-top")
+let bulbbottom = document.querySelector(".bulb-bottom");
+btn.addEventListener("click", () => {
+    if (isOpen) {
+        btn.classList.remove("on")
+        bulbbottom.classList.remove("bulbOn")
+        bulbtop.classList.remove("bulbOn")
+    }
+    else {
+        btn.classList.add("on")
+        bulbtop.classList.add("bulbOn")
+        bulbbottom.classList.add("bulbOn")
+    }
+    isOpen = !isOpen;
+})
