@@ -1,0 +1,24 @@
+let rapper = document.querySelector(".rapper");
+
+
+    // move left
+
+
+setInterval(() => {
+    rapper.style.transition = "transform 0.5s ease";
+    rapper.style.transform = `translateX(-${270}px)`;
+
+
+    // after animation
+    setTimeout(() => {
+        rapper.style.transition = "none";
+
+        // move first image to end
+        let firstImg = rapper.firstElementChild;
+        rapper.appendChild(firstImg);
+        
+        // reset position
+        rapper.style.transform = `translateX(0px)`;
+    }, 500);
+
+}, 2000);
